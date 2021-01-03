@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 import './App.css';
-import {pingBridge} from './philipsHue';
+import {connectToBridge} from './philipsHue';
 
 class ConnectPage extends React.Component {
   constructor(props) {
@@ -35,8 +36,7 @@ class ConnectPage extends React.Component {
   }
 
   async clickHandler() {
-    var result = await pingBridge(this.state.input)
-    console.log(result)
+    var result = await connectToBridge(this.state.input)
   }
 
 
