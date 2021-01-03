@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App status='no-ip'/>
   </React.StrictMode>,
   document.getElementById('root')
 );
