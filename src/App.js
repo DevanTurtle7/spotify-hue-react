@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {pingBridge} from './philipsHue';
 
 class ConnectPage extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ConnectPage extends React.Component {
         // Remove characters that aren't numbers or dots
         string = string.substring(0, i) + string.substring(i + 1, string.length)
       } else if (char === '.' && string[i + 1] === '.') {
-        // Remove repeat dots
+        // Remove repeated dots
         string = string.substring(0, i) + string.substring(i + 1, string.length)
       } else {
         i++
@@ -33,8 +34,9 @@ class ConnectPage extends React.Component {
     this.setState({ input: event.target.value })
   }
 
-  clickHandler() {
-    console.log(this.state.input)
+  async clickHandler() {
+    var result = await pingBridge(this.state.input)
+    console.log(result)
   }
 
 
