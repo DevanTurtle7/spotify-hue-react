@@ -21,7 +21,7 @@ class ConnectPage extends React.Component {
       if (!this.validChars.has(char)) {
         // Remove characters that aren't numbers or dots
         string = string.substring(0, i) + string.substring(i + 1, string.length)
-      } else if (char == '.' && string[i + 1] == '.') {
+      } else if (char === '.' && string[i + 1] === '.') {
         // Remove repeat dots
         string = string.substring(0, i) + string.substring(i + 1, string.length)
       } else {
@@ -54,7 +54,7 @@ class ErrorPage extends React.Component {
 }
 
 function App(props) {
-  if (props.status == 'no-ip') {
+  if (props.status === 'no-ip') {
     return <ConnectPage />
   } else {
     return <ErrorPage />
