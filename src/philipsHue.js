@@ -40,7 +40,7 @@ function pingBridge(ip) {
                 resolve(username) // Resolve the promise
             }
         }).catch(function (error) {
-            console.log('error')
+            console.log('Something went wrong')
             console.log(error)
             reject(error)
         })
